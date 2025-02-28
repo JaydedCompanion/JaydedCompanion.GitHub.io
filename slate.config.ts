@@ -6,7 +6,7 @@ import { defineConfig } from './src/helpers/config-helper';
 export default defineConfig({
   lang: 'en-US',
   site: 'https://slate-blog-demo.vercel.app',
-  avatar: '/avatar.png',
+  avatar: '/avatar.avif',
   title: 'Jayde\'s Cool Blog :3',
   description: 'Jayde is making a cool game',
   lastModified: true,
