@@ -7,9 +7,9 @@ export default defineConfig({
   lang: 'en-US',
   site: 'https://slate-blog-demo.vercel.app',
   avatar: '/avatar.avif',
-  title: 'Jayde\'s Cool Blog :3',
-  description: 'Jayde is making a cool game',
-  lastModified: true,
+title: 'Jayde\'s Quarry',
+  description: 'Delirious ramblings on game development, 3D modelling, analog photography and more!',
+  lastModified: false,
   readTime: true,
   footer: {
     copyright: '© Jayde Callejas',

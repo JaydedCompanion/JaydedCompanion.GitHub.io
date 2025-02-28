@@ -31,7 +31,7 @@
   } */
 
   img {
-    @apply border-slate6 mx-auto my-8 w-full rounded-2xl border;
+    @apply border-slate6 mx-auto my-4 w-full rounded-xl border;
   }
 
   code {
@@ -39,7 +39,7 @@
   }
 
   kbd {
-    @apply border-slate11 drop-shadow-[0_2px_0_rgb(57,43,0)] bg-amber9 text-slate1 mx-0.5 rounded-lg border p-0.5 px-1 text-base;
+    @apply border-amber9 drop-shadow-[0_3px_0_rgba(246,198,89)] bg-slate3 text-amber9 mx-0.5 rounded-lg border p-0.5 px-1 text-base;
   }
 
   .code {
