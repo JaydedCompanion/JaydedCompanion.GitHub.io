@@ -21,6 +21,10 @@ export interface SocialLink {
 }
 
 type SocialLinkIcon =
+  | 'artstation'
+  | 'mastodon'
+  | 'in'
+  | 'bluesky'
   | 'dribbble'
   | 'facebook'
   | 'figma'

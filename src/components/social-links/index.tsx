@@ -49,7 +49,7 @@ function SocialLinks(props: SocialLinksProps) {
           className="h-5 w-5 cursor-pointer text-slate10 hover:text-slate12 transition-all"
           href={socialLink.link}
           target="_blank"
-          rel="noopener"
+          rel="noopener me"
           aria-label={socialLink.ariaLabel}
           key={index}
         >

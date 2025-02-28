@@ -7,17 +7,37 @@ export default defineConfig({
   lang: 'en-US',
   site: 'https://slate-blog-demo.vercel.app',
   avatar: '/avatar.png',
-  title: 'Slate Blog',
-  description: 'Pure thoughts, simple stories.',
+  title: 'Jayde\'s Cool Blog :3',
+  description: 'Jayde is making a cool game',
   lastModified: true,
   readTime: true,
   footer: {
-    copyright: '© 2025 Slate Design',
+    copyright: '© Jayde Callejas',
   },
   socialLinks: [
     {
       icon: 'github',
-      link: 'https://github.com/SlateDesign/slate-blog'
+      link: 'https://github.com/JaydedCompanion/'
+    },
+    {
+      icon: 'artstation',
+      link: 'https://www.artstation.com/jaydedcompanion'
+    },
+    {
+      icon: 'bluesky',
+      link: 'https://bsky.app/profile/jayde.callejas.xyz'
+    },
+    {
+      icon: 'instagram',
+      link: 'https://www.instagram.com/JaydedCompanion/'
+    },
+    {
+      icon: 'mastodon',
+      link: 'https://mastodon.gamedev.place/@JaydedCompanion'
+    },
+    {
+      icon: 'in',
+      link: 'https://www.linkedin.com/in/jayde-callejas-a958b2202'
     },
 ]
 });
