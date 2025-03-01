@@ -31,11 +31,11 @@
   } */
 
   img {
-    @apply border-slate6 mx-auto my-4 w-full rounded-xl border;
+    @apply border-slate6 mx-auto my-4 w-full rounded-xl border-2;
   }
 
   code {
-    @apply border-slate4 bg-slate3 text-slate11 mx-0.5 rounded-lg border p-0.5 px-1 text-base;
+    @apply border-slate4 bg-slate3 text-slate11 mx-0.5 rounded-lg border-2 p-0.5 px-1 text-base;
   }
 
   kbd {
