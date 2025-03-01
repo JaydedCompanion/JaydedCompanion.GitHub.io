@@ -22,7 +22,7 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: "Lexend";
   font-weight: normal;
-  @apply font-400
+  @apply font-normal
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
