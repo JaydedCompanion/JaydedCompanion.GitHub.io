@@ -1,0 +1,30 @@
+# The URL the site will be built for
+base_url = "https://callejas.xyz/"
+title = "Jayde's Quarry"
+default_language = "en"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+generate_feeds = false
+generate_sitemap = true
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+smart_punctuation = false
+
+[extra]
+# Put all your custom variables here
+
+mastodon = "https://mastodon.gamedev.place/@JaydedCompanion"
+bluesky = "https://bsky.app/profile/jayde.callejas.xyz"
+instagram = "https://www.instagram.com/JaydedCompanion/"
+artstation = "https://www.artstation.com/jaydedcompanion"
+github = "https://github.com/JaydedCompanion/"
+linkedin = "https://www.linkedin.com/in/jayde-callejas-a958b2202"
+itchio = "https://jaydedcompanion.itch.io/"

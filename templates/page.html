@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+  {% include "partials/head.html" %}
+  <body class="bg-slate-background">
+    <div class="container">
+      <div class="header">
+        <a href="/" class="back-link"> ← </a>
+        <div class="spacer"></div>
+      </div>
+    </div>
+    <div class="blog-content">
+      <div class="blog-header">
+        <h1>{{ page.title }}</h1>
+        <div class="meta-info">
+          <span>{{ page.date | date(format="%B %d") }}</span>
+          <div class="separator">•</div>
+          <span>{{ page.date | date(format="%B %d") }} minutes</span>
+        </div>
+      </div>
+      <div class="content-body">{{ page.content | safe }}</div>
+    </div>
+    <div class="toc-container">
+      <nav class="toc">
+        <ul>
+          {% for h2 in page.toc %}
+          <li>
+            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+            {% if h2.children %}
+            <ul>
+              {% for h3 in h2.children %}
+              <li>
+                <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+    {% include "partials/footer.html" %}
+  </body>
+</html>

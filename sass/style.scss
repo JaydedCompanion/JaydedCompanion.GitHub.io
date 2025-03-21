@@ -1,0 +1,125 @@
+/* Global styles */
+body {
+    background-color: #f4f4f9; /* slate1 */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Avatar Section */
+  .avatar-container {
+    margin-bottom: 2.25rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    white-space: nowrap;
+  }
+  
+  .avatar-image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 9999px; /* rounded-full */
+    border: 2px solid white;
+    background-color: #e6e6e6; /* slate2 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* shadow-xs */
+    outline: 1px solid #d1d1d1; /* outline-1 outline-slate3 */
+  }
+  
+  /* Content Section */
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 4.5rem 1.5rem 1.5rem;
+    margin: 0 auto;
+    max-width: 45rem; /* max-w-180 */
+    min-height: 100vh;
+  }
+  
+  .intro-section {
+    margin-bottom: 4rem;
+  }
+  
+  .main-title {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 600;
+    line-height: 1.2;
+    color: #3a3a3a; /* slate12 */
+  }
+  
+  .intro-description {
+    font-size: 1.25rem; /* text-xl */
+    color: #707070; /* slate10 */
+  }
+  
+  /* Blog Section */
+  .blog-section {
+    margin-bottom: 4rem;
+  }
+  
+  .blog-list {
+    font-size: 1rem;
+    color: #3a3a3a; /* slate12 */
+  }
+  
+  .blog-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.625rem;
+    border-radius: 0.75rem; /* rounded-lg */
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .blog-item:hover {
+    background-color: #e5e5e5; /* hover:bg-slate3 */
+  }
+  
+  .blog-item:active {
+    transform: scale(0.995);
+    background-color: #dcdcdc; /* active:bg-slate4 */
+  }
+  
+  .blog-title {
+    flex-shrink: 0;
+  }
+  
+  .blog-divider {
+    display: none;
+    width: 100%;
+    height: 1px;
+    background-color: #dcdcdc; /* slate6 */
+    border-top: dashed 1px;
+    margin: 0 2rem;
+  }
+  
+  .blog-date {
+    flex-shrink: 0;
+    color: #808080; /* slate8 */
+  }
+  
+  /* Responsive Layout for sm (small screens) */
+  @media (min-width: 640px) {
+    .blog-item {
+      flex-direction: row;
+      align-items: center;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  
+    .blog-divider {
+      display: block;
+    }
+  }
+  

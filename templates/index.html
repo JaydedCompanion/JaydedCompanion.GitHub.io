@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+  {% include "partials/head.html" %}
+  <body class="bg-slate-background">
+    <header>
+      <div class="avatar-container">
+        <img
+          class="avatar-image"
+          src="/avatar.avif"
+          alt="Jayde"
+          draggable="false"
+        />
+      </div>
+    </header>
+    <div class="content-container">
+      <div>
+        <section class="intro-section">
+          <h1 class="main-title">{{ config.title }}</h1>
+          <p class="intro-description">
+            Delirious ramblings on game development, 3D modelling, analog
+            photography and more!
+          </p>
+        </section>
+        <section class="blog-section">
+          <div class="blog-list">
+            {% set blog_section = get_section(path="blog/_index.md") %} {% for
+            page in blog_section.pages %}
+            <a class="blog-item" href="{{ page.path }}">
+              <span class="blog-title">{{ page.title }}</span>
+              <span class="blog-divider"></span>
+              <span class="blog-date">{{ page.date }}</span>
+            </a>
+            {% endfor %}
+          </div>
+        </section>
+      </div>
+    </div>
+    {% include "partials/footer.html" %}
+  </body>
+</html>
