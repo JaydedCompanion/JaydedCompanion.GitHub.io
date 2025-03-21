@@ -2,8 +2,8 @@
 <html lang="{{ config.default_language }}">
   {% include "partials/head.html" %}
   <body class="bg-slate-background">
-    <header>
-      <div class="avatar-container">
+    <header class="fullwidth-flex index-header">
+      <div class="content-container">
         <img
           class="avatar-image"
           src="/img/avatar.avif"
@@ -12,8 +12,8 @@
         />
       </div>
     </header>
-    <div class="content-container">
-      <div>
+    <div class="fullwidth-flex">
+      <div class="content-container">
         <section class="intro-section">
           <h1 class="main-title">{{ config.title }}</h1>
           <p class="intro-description">
@@ -28,7 +28,7 @@
             <a class="blog-item" href="{{ page.path }}">
               <span class="blog-title">{{ page.title }}</span>
               <span class="blog-divider"></span>
-              <span class="blog-date">{{ page.date }}</span>
+              <span class="blog-date">{{ page.date | date(format="%b %d %Y") }}</span>
             </a>
             {% endfor %}
           </div>
