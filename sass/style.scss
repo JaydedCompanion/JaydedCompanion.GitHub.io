@@ -1,12 +1,19 @@
+@use "footer.scss";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --background-color: #111113;
+    --text-color: #d1d1d1;
+}
+
 /* Global styles */
 body {
-    background-color: #f4f4f9; /* slate1 */
+    background-color: var(--background-color);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -57,10 +64,10 @@ body {
   }
   
   .main-title {
+    color: var(--text-color);
     font-size: 2.5rem; /* 40px */
     font-weight: 600;
     line-height: 1.2;
-    color: #3a3a3a; /* slate12 */
   }
   
   .intro-description {
@@ -86,15 +93,16 @@ body {
     border-radius: 0.75rem; /* rounded-lg */
     cursor: pointer;
     transition: all 0.3s ease;
+    color: var(--text-color);
   }
   
   .blog-item:hover {
-    background-color: #e5e5e5; /* hover:bg-slate3 */
+    background-color: #212225; /* hover:bg-slate3 */
   }
   
   .blog-item:active {
     transform: scale(0.995);
-    background-color: #dcdcdc; /* active:bg-slate4 */
+    background-color: #272a2d; /* active:bg-slate4 */
   }
   
   .blog-title {
