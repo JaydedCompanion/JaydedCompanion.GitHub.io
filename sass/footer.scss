@@ -1,12 +1,27 @@
-.footer {
-  width: 100%;
+.footer-container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 1rem;
+  width: fit-content;
 }
 
 .footer-link {
   height: 1.5rem;
   width: 1.5rem;
-  color: #d1d1d1;
+  color: #808080;
   cursor: pointer;
   transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #d1d1d1;
+}
+
+.footer-copyright {
+  color: #808080;
 }

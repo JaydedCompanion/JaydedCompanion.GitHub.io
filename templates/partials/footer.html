@@ -1,74 +1,74 @@
-<footer class="footer">
-  <div class="footer-container">
-    <section>
-      <a
-        class="footer-link"
-        href="{{ config.extra.mastodon }}"
-        target="_blank"
-        rel="noopener me"
-        aria-label="Mastodon"
-      >
-        {{ load_data(path="static/img/icons/mastodon.svg") | safe}}
-      </a>
-      <a
-        class="footer-link"
-        href="{{ config.extra.bluesky }}"
-        target="_blank"
-        rel="noopener me"
-        aria-label="Bluesky"
-      >
-        {{ load_data(path="static/img/icons/bluesky.svg") | safe}}
-      </a>
-      <a
-        class="footer-link"
-        href="{{ config.extra.itchio }}"
-        target="_blank"
-        rel="noopener me"
-        aria-label="Itch.io"
-      >
-        {{ load_data(path="static/img/icons/itchdotio.svg") | safe}}
-      </a>
-      <a
-        class="footer-link"
-        href="{{ config.extra.instagram }}"
-        target="_blank"
-        rel="noopener me"
-        aria-label="Instagram"
-      >
-        {{ load_data(path="static/img/icons/instagram.svg") | safe}}
-      </a>
-      <a
-        class="footer-link"
-        href="{{ config.extra.github }}"
-        target="_blank"
-        rel="noopener me"
-        aria-label="GitHub"
-      >
-        {{ load_data(path="static/img/icons/github.svg") | safe}}
-      </a>
-      <a
-        class="footer-link"
-        href="{{ config.extra.artstation }}"
-        target="_blank"
-        rel="noopener me"
-        aria-label="ArtStation"
-      >
-        {{ load_data(path="static/img/icons/artstation.svg") | safe}}
-      </a>
-      <a
-        class="footer-link"
-        href="{{ config.extra.linkedin }}"
-        target="_blank"
-        rel="noopener me"
-        aria-label="LinkedIn"
-      >
-        {{ load_data(path="static/img/icons/linkedin.svg") | safe}}
-      </a>
-    </section>
-    <div class="mt-4 flex items-center justify-between">
-      <div class="text-slate8 text-sm">
-        &copy; {{now() | date(format="%Y")}}
+<footer class="fullwidth-flex">
+  <div class="content-container">
+    <div class="footer-container">
+      <div>
+        <div class="footer-copyright">&copy; {{now() | date(format="%Y")}}</div>
       </div>
+      <section class="footer-social-links">
+        <a
+          class="footer-link"
+          href="{{ config.extra.mastodon }}"
+          target="_blank"
+          rel="noopener me"
+          aria-label="Mastodon"
+        >
+          {{ load_data(path="static/img/icons/mastodon.svg") | safe}}
+        </a>
+        <a
+          class="footer-link"
+          href="{{ config.extra.bluesky }}"
+          target="_blank"
+          rel="noopener me"
+          aria-label="Bluesky"
+        >
+          {{ load_data(path="static/img/icons/bluesky.svg") | safe}}
+        </a>
+        <a
+          class="footer-link"
+          href="{{ config.extra.itchio }}"
+          target="_blank"
+          rel="noopener me"
+          aria-label="Itch.io"
+        >
+          {{ load_data(path="static/img/icons/itchdotio.svg") | safe}}
+        </a>
+        <a
+          class="footer-link"
+          href="{{ config.extra.instagram }}"
+          target="_blank"
+          rel="noopener me"
+          aria-label="Instagram"
+        >
+          {{ load_data(path="static/img/icons/instagram.svg") | safe}}
+        </a>
+        <a
+          class="footer-link"
+          href="{{ config.extra.github }}"
+          target="_blank"
+          rel="noopener me"
+          aria-label="GitHub"
+        >
+          {{ load_data(path="static/img/icons/github.svg") | safe}}
+        </a>
+        <a
+          class="footer-link"
+          href="{{ config.extra.artstation }}"
+          target="_blank"
+          rel="noopener me"
+          aria-label="ArtStation"
+        >
+          {{ load_data(path="static/img/icons/artstation.svg") | safe}}
+        </a>
+        <a
+          class="footer-link"
+          href="{{ config.extra.linkedin }}"
+          target="_blank"
+          rel="noopener me"
+          aria-label="LinkedIn"
+        >
+          {{ load_data(path="static/img/icons/linkedin.svg") | safe}}
+        </a>
+      </section>
     </div>
   </div>
 </footer>
