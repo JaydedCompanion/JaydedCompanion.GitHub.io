@@ -28,7 +28,9 @@
             <a class="blog-item" href="{{ page.path }}">
               <span class="blog-title">{{ page.title }}</span>
               <span class="blog-divider"></span>
-              <span class="blog-date">{{ page.date | date(format="%b %d %Y") }}</span>
+              <span class="blog-date"
+                >{{ page.date | date(format="%b %d %Y") }}</span
+              >
             </a>
             {% endfor %}
           </div>
