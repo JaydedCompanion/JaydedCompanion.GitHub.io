@@ -31,6 +31,22 @@
   max-width: var(--max-width); /* max-w-180 */
 }
 
+.navigation-button {
+  min-width: 4rem;
+  width: fit-content;
+  cursor: pointer;
+  touch-action: manipulation;
+  background-color: #212225;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-user-select: none;
+  user-select: none;
+  border-radius: 999rem;
+}
+
 /* Global styles */
 body {
   background-color: var(--background-color);
