@@ -6,67 +6,69 @@
         href="{{ config.extra.mastodon }}"
         target="_blank"
         rel="noopener me"
-        aria-label=Mastodon
+        aria-label="Mastodon"
       >
-      Mastodon
+        {{ load_data(path="static/img/icons/mastodon.svg") | safe}}
       </a>
       <a
         class="footer-link"
         href="{{ config.extra.bluesky }}"
         target="_blank"
         rel="noopener me"
-        aria-label=Mastodon
+        aria-label="Bluesky"
       >
-      Bluesky
+        {{ load_data(path="static/img/icons/bluesky.svg") | safe}}
       </a>
       <a
         class="footer-link"
         href="{{ config.extra.itchio }}"
         target="_blank"
         rel="noopener me"
-        aria-label=Itch.io
+        aria-label="Itch.io"
       >
-      Itch.io
+        {{ load_data(path="static/img/icons/itchdotio.svg") | safe}}
       </a>
       <a
         class="footer-link"
         href="{{ config.extra.instagram }}"
         target="_blank"
         rel="noopener me"
-        aria-label=Instagram
+        aria-label="Instagram"
       >
-      Instagram
+        {{ load_data(path="static/img/icons/instagram.svg") | safe}}
       </a>
       <a
         class="footer-link"
         href="{{ config.extra.github }}"
         target="_blank"
         rel="noopener me"
-        aria-label=GitHub
+        aria-label="GitHub"
       >
-      GitHub
+        {{ load_data(path="static/img/icons/github.svg") | safe}}
       </a>
       <a
         class="footer-link"
         href="{{ config.extra.artstation }}"
         target="_blank"
         rel="noopener me"
-        aria-label=ArtStation
+        aria-label="ArtStation"
       >
-      ArtStation
+        {{ load_data(path="static/img/icons/artstation.svg") | safe}}
       </a>
       <a
         class="footer-link"
         href="{{ config.extra.linkedin }}"
         target="_blank"
         rel="noopener me"
-        aria-label=LinkedIn
+        aria-label="LinkedIn"
       >
-      LinkedIn
+        {{ load_data(path="static/img/icons/linkedin.svg") | safe}}
       </a>
-  </section>
-  <div class="mt-4 flex items-center justify-between">
-    <div class="text-slate8 text-sm">{{now() | date(format="%Y")}}</div>
+    </section>
+    <div class="mt-4 flex items-center justify-between">
+      <div class="text-slate8 text-sm">
+        &copy; {{now() | date(format="%Y")}}
+      </div>
+    </div>
   </div>
-</div>
 </footer>
