@@ -1,0 +1,324 @@
+// TODO (FROM HANK!) This variables section should be merged with the others in utility.scss
+
+:root {
+  /* Slate color palette */
+  --slate3: #f8f9fb; /* Light background */
+  --slate4: #eaecf0; /* Border color */
+  --slate6: #d0d5dd; /* Border color for images */
+  --slate8: #667085; /* Secondary text, markers */
+  --slate10: #475569; /* Blockquote text */
+  --slate11: #64748b; /* Primary text for lists and elements */
+  --slate12: #1e293b; /* Primary text, headings */
+
+  /* Indigo color palette */
+  --indigo2: #f5f8ff; /* Light background for tip blocks */
+  --indigo4: #d1e0ff; /* Border for tip blocks */
+  --indigo6: #7ea1ff; /* Link underline color */
+  --indigo11: #3e63dd; /* Link text */
+
+  /* Orange color palette */
+  --orange2: #fff7ed; /* Light background for warning blocks */
+  --orange4: #ffddb6; /* Border for warning blocks */
+  --orange11: #f37913; /* Warning block title */
+
+  /* Amber color palette */
+  --amber9: #f6c659; /* Border and text for kbd elements */
+}
+
+// Blog Page Layout
+
+.page-title {
+  color: var(--slate3);
+  font-size: 2.25rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.blog-date-container {
+  color: var(--slate8);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toc-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 16rem;
+  padding: 1rem;
+
+  nav {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+  }
+
+  li {
+    list-style-type: none;
+    color: var(--slate8);
+  }
+}
+
+@media (min-width: 1400px) {
+  .toc-container {
+    display: block;
+  }
+}
+
+// Post typography
+
+.blog-content {
+  margin-bottom: 4rem;
+
+  h1 {
+    color: var(--slate3);
+    margin-bottom: 0.5rem;
+    font-size: 2.25rem;
+    line-height: 1.5;
+    font-weight: 700;
+  }
+  h2 {
+    color: var(--slate3);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.875rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  h3 {
+    color: var(--slate3);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  h4 {
+    color: var(--slate3);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  p {
+    color: var(--slate3);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+
+  a {
+    color: var(--indigo11);
+    text-decoration-color: var(--indigo6);
+    text-underline-offset: 4px;
+    transition: all;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  //   a::after {
+  //     color: var(--slate8);
+  //     margin-left: 0.125rem;
+  //     margin-right: 0.125rem;
+  //     content: "↗";
+  //   }
+
+  img {
+    border-color: var(--slate6);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    border-width: 2px;
+  }
+
+  code {
+    border-color: var(--slate4);
+    background-color: var(--slate3);
+    color: var(--slate11);
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    padding: 0.125rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    font-size: 1rem;
+  }
+
+  kbd {
+    border-color: var(--amber9);
+    filter: drop-shadow(0 3px 0 rgba(246, 198, 89));
+    background-color: color-mix(in oklch, var(--background-color), white 10%);
+    color: var(--amber9);
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.125rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    font-size: 1rem;
+  }
+
+  .code {
+    text-wrap: wrap;
+  }
+
+  .katex-html {
+    display: none;
+  }
+
+  .block-default {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.75rem;
+    padding: 1rem;
+
+    p {
+      color: var(--slate12);
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 1rem;
+      line-height: 1.625;
+    }
+  }
+
+  .tip {
+    border-color: var(--indigo4);
+    background-color: var(--indigo2);
+    border-width: 1px;
+
+    .block-title {
+      color: var(--indigo11);
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+  }
+
+  .warning {
+    border-color: var(--orange4);
+    background-color: var(--orange2);
+    border-width: 1px;
+
+    .block-title {
+      color: var(--orange11);
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+  }
+
+  table {
+    border-color: var(--slate4);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border-width: 1px;
+
+    thead {
+      border-color: var(--slate4);
+      background-color: var(--slate3);
+      border-bottom-width: 1px;
+      text-align: left;
+    }
+
+    th,
+    td {
+      border-color: var(--slate4);
+      border-bottom-width: 1px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+  }
+
+  blockquote {
+    border-color: var(--slate4);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left-width: 2px;
+    padding-left: 1rem;
+
+    p {
+      color: var(--slate10);
+      font-size: 1rem;
+      line-height: 1.625;
+    }
+  }
+
+  hr {
+    border-color: var(--slate4);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 33.333333%;
+  }
+
+  ul {
+    color: var(--slate11);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    list-style-type: disc;
+    padding-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+
+  .task-list-item {
+    list-style-type: none;
+  }
+
+  ul li::marker {
+    color: var(--slate8);
+  }
+
+  ol {
+    color: var(--slate11);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+
+  li {
+    color: var(--slate11);
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+
+  ol li::marker {
+    color: var(--slate8);
+  }
+
+  figcaption {
+    color: var(--slate8);
+    margin-top: -1rem;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+
+  .expressive-code {
+    margin-bottom: 1.5rem;
+  }
+}
