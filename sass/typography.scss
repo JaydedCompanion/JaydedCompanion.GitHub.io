@@ -20,9 +20,6 @@
   --orange2: #fff7ed; /* Light background for warning blocks */
   --orange4: #ffddb6; /* Border for warning blocks */
   --orange11: #f37913; /* Warning block title */
-
-  /* Amber color palette */
-  --amber9: #f6c659; /* Border and text for kbd elements */
 }
 
 // Blog Page Layout
@@ -31,7 +28,7 @@
   color: var(--slate3);
   font-size: 2.25rem;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .blog-date-container {
@@ -49,6 +46,7 @@
   bottom: 0;
   width: 16rem;
   padding: 1rem;
+  line-height: 2rem;
 
   nav {
     height: 100%;
@@ -72,6 +70,12 @@
 
 // Post typography
 
+.playdate-content {
+  h2 {
+    color: var(--playdate-yellow) !important;
+  }
+}
+
 .blog-content {
   margin-bottom: 4rem;
 
@@ -80,7 +84,7 @@
     margin-bottom: 0.5rem;
     font-size: 2.25rem;
     line-height: 1.5;
-    font-weight: 700;
+    font-weight: 400;
   }
   h2 {
     color: var(--slate3);
@@ -88,7 +92,7 @@
     margin-bottom: 0.5rem;
     font-size: 1.875rem;
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: 400;
   }
   h3 {
     color: var(--slate3);
@@ -96,7 +100,7 @@
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   h4 {
@@ -105,7 +109,8 @@
     margin-bottom: 0.5rem;
     font-size: 1rem;
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   p {
@@ -127,12 +132,12 @@
     text-decoration: underline;
   }
 
-  //   a::after {
-  //     color: var(--slate8);
-  //     margin-left: 0.125rem;
-  //     margin-right: 0.125rem;
-  //     content: "↗";
-  //   }
+    // a::after {
+    //   color: var(--slate8);
+    //   margin-left: 0.125rem;
+    //   margin-right: 0.125rem;
+    //   content: "↗";
+    // }
 
   img {
     border-color: var(--slate6);
@@ -145,25 +150,57 @@
     border-width: 2px;
   }
 
+  pre {
+    padding: 0.75rem;
+    overflow: auto;
+
+    code {
+      background-color: unset;
+      border-style: unset;
+      padding: unset;
+    }
+  }
+  /* The line numbers already provide some kind of left/right padding */
+  pre[data-linenos] {
+  }
+  pre table td {
+    padding: 0 0.25rem;
+  }
+  /* The line number cells */
+  pre table td:nth-of-type(1) {
+    text-align: center;
+    vertical-align: top;
+    user-select: none;
+  }
+  pre mark {
+    /* If you want your highlights to take the full width */
+    display: block;
+    /* The default background colour of a mark is bright yellow */
+    background-color: rgba(254, 252, 232, 0.9);
+  }
+  pre table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+  }
+
+// TODO (FROM HANK) reset the playdate varaibles and move them into overrides so they don't affect non playdate projects
+
   code {
-    border-color: var(--slate4);
-    background-color: var(--slate3);
-    color: var(--slate11);
-    margin-left: 0.125rem;
-    margin-right: 0.125rem;
-    border-radius: 0.5rem;
-    border-width: 2px;
+    font-family: var(--font-mono);
+    background-color: #2b303b;
     padding: 0.125rem;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    font-size: 1rem;
+    border-radius: 0.25rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--playdate-yellow);
   }
 
   kbd {
-    border-color: var(--amber9);
-    filter: drop-shadow(0 3px 0 rgba(246, 198, 89));
+    border-color: var(--playdate-yellow);
+    box-shadow: (0 3px 0 var(--playdate-yellow));
     background-color: color-mix(in oklch, var(--background-color), white 10%);
-    color: var(--amber9);
+    color: var(--playdate-yellow);
     margin-left: 0.125rem;
     margin-right: 0.125rem;
     border-radius: 0.5rem;
@@ -173,53 +210,6 @@
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     font-size: 1rem;
-  }
-
-  .code {
-    text-wrap: wrap;
-  }
-
-  .katex-html {
-    display: none;
-  }
-
-  .block-default {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 0.75rem;
-    padding: 1rem;
-
-    p {
-      color: var(--slate12);
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 1rem;
-      line-height: 1.625;
-    }
-  }
-
-  .tip {
-    border-color: var(--indigo4);
-    background-color: var(--indigo2);
-    border-width: 1px;
-
-    .block-title {
-      color: var(--indigo11);
-      font-size: 1.125rem;
-      font-weight: 600;
-    }
-  }
-
-  .warning {
-    border-color: var(--orange4);
-    background-color: var(--orange2);
-    border-width: 1px;
-
-    .block-title {
-      color: var(--orange11);
-      font-size: 1.125rem;
-      font-weight: 600;
-    }
   }
 
   table {
@@ -283,10 +273,6 @@
     line-height: 1.625;
   }
 
-  .task-list-item {
-    list-style-type: none;
-  }
-
   ul li::marker {
     color: var(--slate8);
   }
@@ -316,9 +302,5 @@
     margin-top: -1rem;
     text-align: center;
     font-size: 0.875rem;
-  }
-
-  .expressive-code {
-    margin-bottom: 1.5rem;
   }
 }

@@ -1,15 +1,23 @@
+/* Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: var(--font-body);
+}
+
+/* Variables */
 :root {
   --background-color: #111113;
   --text-color: #d1d1d1;
+  --playdate-yellow: #ffb81c;
   --max-width: 52rem;
   --font-display: "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-body: "Lexend", sans-serif;
+  --font-mono: monospace;
 }
 
 .w-full {
@@ -37,7 +45,7 @@
   cursor: pointer;
   touch-action: manipulation;
   background-color: #212225;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   font-size: 1rem;
   line-height: 1.5;
   color: white;

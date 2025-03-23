@@ -2,6 +2,7 @@
 base_url = "https://callejas.xyz/"
 title = "Jayde's Quarry"
 default_language = "en"
+taxonomies = [{name = "tags"}]
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -9,13 +10,17 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
-generate_feeds = false
+generate_feeds = true
 generate_sitemap = true
 
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
+highlight_theme = "css"
+highlight_themes_css = [
+  { theme = "base16-ocean-dark", filename = "syntax.css" },
+]
 smart_punctuation = false
 
 [extra]

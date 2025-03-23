@@ -5,6 +5,21 @@
   href="{{ get_url(path=`style.css`, cachebust=true) }}"
 />
 
+<link
+  rel="preload stylesheet"
+  as="style"
+  href="{{ get_url(path=`syntax.css`, cachebust=true) }}"
+/>
+
+<!-- Google Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+  rel="stylesheet"
+/>
+
 <!-- Page Meta Tags -->
 
 {%- if page.taxonomies.authors is defined %} {%- set page_authors =
