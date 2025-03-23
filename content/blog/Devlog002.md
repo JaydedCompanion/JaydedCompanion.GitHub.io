@@ -16,7 +16,7 @@ The difference between all of these examples and Playdate, as you might've alrea
 
 The issue with Playdate having support for both C and Lua, at least for me, is that it's harder to decide which one to use. Considering how I'm planning on making a high-speed game that would look and feel its best at higher frame-rates, C's performance benefits would be a boon for this kind of project. Additionally, I believe that learning to program in C will teach me more about the fundamentals of development through writing low-level code.
 
-On the other hand, C has some pretty significant drawbacks: for one, the Playdate's C API documentation leaves a lot to be desired (even according to the more experienced developers I asked for help): the vast majority of entries in the documentation simply consist of a method header, and, on average, one or two sentences about what the function does. There is very little information on what each parameter should contain (other than the datatype it expects) or how the function should be used, and essentially zero example code. Getting a Makefile to work is, in my experience, also a vague process, despite the length of this section of the docs. Lastly, and perhaps most importantly, while looking for some answers online, it seems like the C API [doesn't even have full parity](https://devforum.play.date/t/implement-parity-for-audio-between-c-and-lua-apis/10164): a few functions available in the Lua API are [straight up](https://devforum.play.date/t/c-equivalent-to-playdate-gettime/7884) [missing](https://devforum.play.date/t/c-api-how-to-pass-in-userdata-to-the-sndcallbackproc-callbacks/10160) in the C API. Hopefully I won't need them!
+On the other hand, C has some pretty significant drawbacks: for one, the Playdate's C API documentation leaves a lot to be desired (even according to the more experienced developers I asked for help): the vast majority of entries in the documentation simply consist of a method header, and, on average, one or two sentences about what the function does. There is very little information on what each parameter should contain (other than the datatype it expects) or how the function should be used, and essentially zero example code. Getting a Makefile to work is, in my experience, also a vague process, despite the length of this section of the docs. Lastly, and perhaps most importantly, while looking for some answers online, it seems like the C API [doesn't even have full parity](https://devforum.play.date/t/implement-parity-for-audio-between-c-and-lua-apis/10164): a few functions available in the Lua API are [outright](https://devforum.play.date/t/c-equivalent-to-playdate-gettime/7884) [missing](https://devforum.play.date/t/c-api-how-to-pass-in-userdata-to-the-sndcallbackproc-callbacks/10160) in the C API. Hopefully I won't need them!
 
 While preparing for this project, I've likened the comparison of C vs Lua to manual vs automatic transmissions, correspondingly. In true stick-shift fashion, even once I've wrapped my head around a lot of the theory, getting this thing to do anything without it immediately stalling out is very difficult. However, C, like a manual transmission, allows me to have more direct control over what's going on in the back end, and ultimately increases the ceiling of what I can achieve (but, conversely, raises the minimum knowledge required to get anything done).
 
@@ -24,9 +24,11 @@ While preparing for this project, I've likened the comparison of C vs Lua to man
 
 Now that I've finished crying to you about the drawbacks of the C API[^1], I think it's about time I actually wrote some dang code. As usual, I began with ol' reliable to get myself started.
 
-<img src="/img/blogimg/devlog002-ol-reliable.png" loading="lazy" alt="Spongebob ol' reliable meme, with the spatula case containing the code to print hello world."/>
+<img src="/img/blogimg/devlog002-ol-reliable_dithered.png" loading="lazy" alt="Spongebob ol' reliable meme, with the spatula case containing the code to print hello world." style="image-rendering: pixelated;"/>
 
-Immediately, there are some complications. To output text to the Playdate's console, we have to do it through the Playdate API instead of using the standard library's `printf()` method. To access the Playdate API, we need a Playdate API struct. How do we get one of those? Well, fortunately, this is a fundamental enough aspect of Playdate development that the documentation actually does a decent job of explaining the process. First, we have to import the Playdate API via the `pd_api.h` header file, and declare the following event handler function in our `main.c` source file.
+### Hello World, the PlaydateAPI Struct, and Events
+
+Immediately, there are some complications. To output text to the Playdate's console, we have to do it through the Playdate API instead of using the standard library's `printf()` method. To access the Playdate API, we need a `PlaydateAPI` struct. How do we get one of those? Well, fortunately, this is a fundamental enough aspect of Playdate development that the documentation actually does a decent job of explaining the process. First, we have to import the Playdate API via the `pd_api.h` header file, and declare the following event handler function in our `main.c` source file.
 
 ```c, linenos
 #include "pd_api.h"
@@ -72,7 +74,7 @@ int eventHandler(PlaydateAPI* playdate, PDSystemEvent event, uint32_t arg) {
 }
 ```
 
-## Building
+### Building
 
 And, just like that, you've got a Playdate game that spits out a string to the console! What's that? How do you actually turn your `main.c` file into a `game.pdx` file for the Playdate simulator? Well, that's one part where I must admit I have no clue what I'm doing. There are a few ways to turn a game's source into a `.pdx` file that will run in the Playdate emulator, depending on the platform.
 
@@ -90,7 +92,7 @@ MyPlaydateProject/
 
 This was one of the moments where my frustration towards Playdate's C API was at its peak. The C API docs' build instructions boil down to "just use one of the example project's build files, trust me bro" which to me is a completely inadequate solution, as whatever Makefile (or CMakeLists.txt file) I'm using acts almost as a black box. None of its functionality is explained and I just have to hope it does what I want it to, which, as demonstrated by this little "Source file vs. folder" problem, I most certainly cannot trust it to do what it should, let alone what I want it to.
 
-## Custom Update Function
+### Custom Update Function
 
 Now that we've got a working _program_, let's set up the structure for building a _game._ One of the fundamental aspects of most games is having an update function. This will give us a place to update the game logic at a (hopefully) consistent rate[^2], instead of only being able to respond to user input when it occurs via events.
 
@@ -114,7 +116,7 @@ int eventHandler(PlaydateAPI* playdate, PDSystemEvent event, uint32_t arg) {
 }
 ```
 
-## A True Sense of Progress
+### A True Sense of Progress
 
 Despite all the ups and (mostly) downs so far, I feel like I now have some momentum and can start actually making something! With these inane issues now sorted, I managed to get through some of the other basics relatively quickly. I first stole (and modified[^3]) the following code from an example project to import an image into an `LCDBitmap` (which I eventually learnt is quite different from an `LCDSprite`, not that you'd know from reading the API.) There was a small hiccup here as, again, nowhere are you told where the `path` parameter is relative to. I eventually figured out it's _relative to the outputted `pdex.*` files_, which can be found in the fun little Source folder I ranted about earlier—though this might be different if you use something other than Make to build your project.
 
