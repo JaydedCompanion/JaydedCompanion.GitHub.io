@@ -42,17 +42,26 @@ body {
 .navigation-button {
   min-width: 4rem;
   width: fit-content;
-  cursor: pointer;
-  touch-action: manipulation;
   background-color: #212225;
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
-  line-height: 1.5;
   color: white;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-user-select: none;
   user-select: none;
   border-radius: 999rem;
+  display: flex;
+  gap: 0.5rem;
+
+  svg {
+    width: 1rem;
+    height: auto;
+  }
+
+}
+
+.navigation-button:hover {
+  background-color: color-mix(in oklch, #212225, white 10%)
 }
 
 /* Global styles */

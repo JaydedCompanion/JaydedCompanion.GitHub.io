@@ -46,6 +46,7 @@
   bottom: 0;
   width: 16rem;
   padding: 1rem;
+  margin-right: 2rem;
   line-height: 2rem;
 
   nav {
@@ -184,7 +185,7 @@
     margin: 0;
   }
 
-// TODO (FROM HANK) reset the playdate varaibles and move them into overrides so they don't affect non playdate projects
+// TODO (FROM reset the playdate varaibles and move them into overrides so they don't affect non playdate projects
 
   code {
     font-family: var(--font-mono);
