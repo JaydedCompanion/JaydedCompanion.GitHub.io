@@ -143,32 +143,6 @@ page.taxonomies.tags %}
 />
 {%- endif %} {%- else %}
 <meta property="og:type" content="website" />
-{%- endif %} {%- if config.generate_feeds or (taxonomy.feed and term.path) %}
-{%- for feed_filename in config.feed_filenames %} {%- if taxonomy.feed and
-term.path %} {%- set feed_title = page_title ~ title_separator %} {%- set
-feed_filename = term.path ~ feed_filename %} {%- elif config_title %} {%- set
-feed_title = config_title ~ title_separator %} {%- else %} {%- set feed_title =
-"" %} {%- endif %} {%- if feed_filename is ending_with("atom.xml") %}
-<link
-  rel="alternate"
-  type="application/atom+xml"
-  href="{{
-    get_url(path=feed_filename, lang=lang) }}"
-  title="{{ feed_title | escape_xml | safe }}Atom"
-/>
-{%- elif feed_filename is ending_with("rss.xml") %}
-<link
-  rel="alternate"
-  type="application/rss+xml"
-  href="{{
-    get_url(path=feed_filename, lang=lang) }}"
-  title="{{ feed_title | escape_xml | safe }}RSS"
-/>
-{%- else %}
-<link
-  rel="alternate"
-  title="{{ feed_title ~ feed_filename | escape_xml | safe }}"
-  href="{{
-    get_url(path=feed_filename, lang=lang) }}"
-/>
-{%- endif %} {%- endfor %} {%- endif %}
+{%- endif %} {% block rss %} <link rel="alternate" type="application/rss+xml"
+title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}"> {%
+endblock %}
