@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ config.default_language }}">
-  {% include "partials/head.html" %}
-  <body id="playdate">
+  {% include "partials/head.html" %} {% if page.taxonomies.tags is containing
+  ("playdate") %}
+  <body class="playdate-content">
+  {% else %}
+  <body>
+  {% endif %}
     <div class="fullwidth-flex index-header">
       <div class="content-container">
         <a href="/" class="navigation-button" aria-label="Back"
-          >{{ load_data(path="static/img/icons/arrow-left.svg") | safe}} Back</a
+          >{{ load_data(path="static/img/icons/arrow-left.svg") | safe}}</a
         >
         <div class="spacer"></div>
       </div>
@@ -18,13 +22,7 @@
           <div>•</div>
           <span>{{ page.reading_time }} minutes</span>
         </div>
-        {% if page.taxonomies.tags is containing ("playdate") %}
-        <article class="blog-content playdate-content">
-          {{ page.content | safe }}
-        </article>
-        {% else %}
         <article class="blog-content">{{ page.content | safe }}</article>
-        {% endif %}
       </div>
     </div>
     <div class="toc-container">

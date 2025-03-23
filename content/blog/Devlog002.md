@@ -24,7 +24,7 @@ While preparing for this project, I've likened the comparison of C vs Lua to man
 
 Now that I've finished crying to you about the drawbacks of the C API[^1], I think it's about time I actually wrote some dang code. As usual, I began with ol' reliable to get myself started.
 
-![[ol reliable.png|400]]
+<img src="/img/blogimg/devlog002-ol-reliable.png" loading="lazy" alt="Spongebob ol' reliable meme, with the spatula case containing the code to print hello world."/>
 
 Immediately, there are some complications. To output text to the Playdate's console, we have to do it through the Playdate API instead of using the standard library's `printf()` method. To access the Playdate API, we need a Playdate API struct. How do we get one of those? Well, fortunately, this is a fundamental enough aspect of Playdate development that the documentation actually does a decent job of explaining the process. First, we have to import the Playdate API via the `pd_api.h` header file, and declare the following event handler function in our `main.c` source file.
 
@@ -199,6 +199,6 @@ Given the kinks I worked out since the last devlog, I'm hoping the next update w
 ## Footnotes
 
 [^1]: This, I'm sorry to say, is not the last time you'll see me slander the API.
-[^2]: Ideally, the Playdate API will call our update function with the frequency indicated by the refresh rate (which can be set with the`playdate->display->setRefreshRate()` function). However, if the update method call takes too long, the next update will happen later than expected—hence the "(hopefully) consistent rate." In theory, going through the trouble of making this game in C will decrease the likelihood of this occurring.
+[^2]: Ideally, the Playdate API will call our update function with the frequency indicated by the refresh rate (which can be set with the `playdate->display->setRefreshRate()` function). However, if the update method call takes too long, the next update will happen later than expected—hence the "(hopefully) consistent rate." In theory, going through the trouble of making this game in C will decrease the likelihood of this occurring.
 [^3]: This code was obtained from the `SpriteGame` example provided by Panic, and is mostly unchanged. The main difference is that I added some comments while deciphering the purpose and usage of each function, with the aim to better understand the code and ensure I can figure out what it does if I ever need to read or modify it in the future.
 [^4]: While the images are monochrome, it seems like each pixel can have four different values: white (`pixel = 1`); black (`pixel = 0`); clear, which is a transparent pixel (`pixel = pixel`); and an "XOR" value, which seems to act as the opposite colour of whatever was rendered beneath that pixel (`pixel = !pixel`).

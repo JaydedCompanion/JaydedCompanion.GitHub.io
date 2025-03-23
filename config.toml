@@ -21,7 +21,7 @@ feed_filenames = ["rss.xml"]
 highlight_code = true
 highlight_theme = "css"
 highlight_themes_css = [
-  { theme = "base16-ocean-dark", filename = "syntax.css" },
+  { theme = "axar", filename = "syntax.css" },
 ]
 smart_punctuation = false
 
