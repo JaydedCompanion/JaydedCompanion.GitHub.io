@@ -14,15 +14,15 @@
 .footer-link {
   height: 1.5rem;
   width: 1.5rem;
-  color: #808080;
+  color: var(--secondary-color);
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .footer-link:hover {
-  color: #d1d1d1;
+  color: color-mix(in okhcl, var(--secondary-color), white 10%);
 }
 
 .footer-copyright {
-  color: #808080;
+  color: var(--secondary-color);
 }
