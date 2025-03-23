@@ -1,9 +1,10 @@
 ---
-title: Playdate Devlog 001 - Coming Up With a Concept
+title: Playdate Devlog 001 — Coming Up With a Concept
 description: The first entry in a series of devlogs where I document the process of developing a game for the playdate.
-tags:
-  - Gamedev
-  - Playdate
+taxonomies:
+  tags:
+    - gamedev
+    - playdate
 date: 2025-02-23
 ---
 
