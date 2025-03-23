@@ -41,7 +41,7 @@ Right now, however, we don't care about any of this. Instead, we care about the 
 
 We can also declare a switch statement to handle the various event types, since we don't need to store the Playdate API struct every single time an event occurs, only during the initialization event (since that's the very first event that we will receive).
 
-```c
+```c, linenos
 #include "pd_api.h"
 const PlaydateAPI *pd;
 int eventHandler(PlaydateAPI* playdate, PDSystemEvent event, uint32_t arg) {
@@ -57,7 +57,7 @@ int eventHandler(PlaydateAPI* playdate, PDSystemEvent event, uint32_t arg) {
 
 With the Playdate API now accessible through our `pd` variable, we can now call any of the Playdate's functions whenever and wherever we want. One such function is the `logToConsole()` function, which is Playdate's version of `printf()`. Since we only really want a string to print once, let's call the function from within the initialization event.
 
-```c
+```c, linenos
 #include "pd_api.h"
 const PlaydateAPI *pd;
 int eventHandler(PlaydateAPI* playdate, PDSystemEvent event, uint32_t arg) {
@@ -96,7 +96,7 @@ Now that we've got a working _program_, let's set up the structure for building 
 
 The Playdate API has a fairly simple way of doing this. All we have to do is use the `setUpdateCallback()` function to specify which method we'd like the Playdate API to call when we want the game logic to be updated. At this point in development, I'm not exactly sure what the `userdata` parameter is meant to contain, but I _think_ it can be any arbitrary data we might need during update calls.
 
-```c
+```c, linenos
 #include "pd_api.h"
 const PlaydateAPI *pd;
 int update(void *userdata) {
@@ -118,7 +118,7 @@ int eventHandler(PlaydateAPI* playdate, PDSystemEvent event, uint32_t arg) {
 
 Despite all the ups and (mostly) downs so far, I feel like I now have some momentum and can start actually making something! With these inane issues now sorted, I managed to get through some of the other basics relatively quickly. I first stole (and modified[^3]) the following code from an example project to import an image into an `LCDBitmap` (which I eventually learnt is quite different from an `LCDSprite`, not that you'd know from reading the API.) There was a small hiccup here as, again, nowhere are you told where the `path` parameter is relative to. I eventually figured out it's _relative to the outputted `pdex.*` files_, which can be found in the fun little Source folder I ranted about earlier—though this might be different if you use something other than Make to build your project.
 
-```c
+```c, linenos
 // Loads the image stored at {path} and returns it as a new LCDBitmap
 LCDBitmap *loadImageAtPath (const PlaydateAPI *pd, const char *path) {
     // Declare a string to store any potential error output
@@ -138,7 +138,7 @@ I defined this method in a new `.c` file which I'll use to store any "utility" f
 
 Next, I once again "borrowed" some code from the `SpriteGame` example project, which does all the legwork to turn my `LCDBitmap` into an `LCDSprite`. If you're like me, you might be wondering what the difference is between the two. If you've read the docs, you'll see that the difference between the two is... not explained! But after reading some of the `SpriteGame` example code and going through some of the API's code, I believe `LCDBitmaps` are basically arrays of monochrome[^4] pixels (I.e. a monochrome image), while `LCDSprite`s can have not just a corresponding image, but also a position, z-index, collision shape, and even an update function! Due to this, we first import our image into a bitmap, and then assign that bitmap to a new sprite, which will act as our "player object" of sorts.
 
-```c
+```c, linenos
 static LCDSprite *ballSprite;
 LCDSprite *sprite (const PlaydateAPI *pd, const float x, const float y) {
 	// Create a new LCDSprite
@@ -159,7 +159,7 @@ I went into development thinking I'd have to do very low-level programming, even
 
 Going back to `main.c`, we can write a couple lines of code to initialize a sprite and "register" it to the sprite system. Then, whenever we want to modify the state of our sprite we can simply do so from our update function and take care of the rest by simply calling `updateAndDrawSprites()` at the end of our update.
 
-```c
+```c, linenos
 #include "pd_api.h"
 const PlaydateAPI *pd;
 LCDSprite *sprite;
@@ -190,7 +190,7 @@ int eventHandler(PlaydateAPI* playdate, PDSystemEvent event, uint32_t arg) {
 
 ## Conclusion
 
-So, despite how long it's been since the last devlog, and how long this post is, you might think that the progress I've made is arguably rather dismal. While this isn't entirely untrue, I'd argue that a lot of progress has been made in my understanding of the Playdate's C API and its intricacies. I now have some basic understanding how how `LCDSprite`s work, and how they'll help me turn this game concept into a game reality, and I now have a working source-to-simulator pipeline that will allow me to quickly test and iterate over any code I write in the future.
+So, despite how long it's been since the last devlog, and how long this post is, you might think that the progress I've made is arguably rather dismal. While this isn't entirely untrue, I'd argue that a lot of progress has been made in my understanding of the Playdate's C API and its intricacies. I now have some basic understanding of how the `LCDSprite` struct works, and how it'll help me turn this game concept into a game reality, and I now have a working source-to-simulator pipeline that will allow me to quickly test and iterate over any code I write in the future.
 
 I also made some progress that I didn't really go over here since I'd argue it's not entirely part of the development process: I switched from VSCodium to CLion, which has been a huge help since CLion has proper autofill and plenty of other tools that make programming in C a breeze (or, well, less of a headache.) Given the vast assortment of extensions available for VSCode (and, by extension, available for VSCodium,) I'm sure I could've achieved this without having to switch over to CLion, but given how much better the functionality with C is out-of-the-box, and how many other hurdles I have to jump through, I'd rather just stick with CLion and eliminate my IDE as another potential source of trouble.
 
