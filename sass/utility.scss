@@ -7,12 +7,15 @@
 
 body {
   font-family: var(--font-body);
+  color: var(--text-color);
+  font-weight: 300;
 }
 
 /* Variables */
 :root {
   --background-color: #111113;
-  --text-color: #d1d1d1;
+  --text-color: #dedede;
+  --secondary-color: #77777f;
   --playdate-yellow: #ffb81c;
   --max-width: 52rem;
   --font-display: "Inter", sans-serif;
@@ -42,11 +45,11 @@ body {
 .navigation-button {
   min-width: 4rem;
   width: fit-content;
-  background-color: #212225;
+  background-color: color-mix(in oklch, var(--background-color), white 10%);
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
-  color: white;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-color);
+  transition: all 0.2s cubic-bezier(0.3,0,.3,1);
   -webkit-user-select: none;
   user-select: none;
   border-radius: 999rem;

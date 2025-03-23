@@ -32,7 +32,7 @@
 }
 
 .blog-date-container {
-  color: var(--slate8);
+  color: var(--secondary-color);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -59,7 +59,7 @@
 
   li {
     list-style-type: none;
-    color: var(--slate8);
+    color: var(--secondary-color);
   }
 }
 
@@ -72,13 +72,12 @@
 // Post typography
 
 .playdate-content {
-  .page-title, h1, h2, h3, h4, h5, .navigation-button {
+  h1, h2, h3, h4, h5 {
     color: var(--playdate-yellow) !important;
   }
-  .footnote-definition-label {
+  .footnote-definition-label, .page-title, .navigation-button {
     color: var(--playdate-yellow) !important;
   }
-
 }
 
 .blog-content {
@@ -119,7 +118,7 @@
   }
 
   p {
-    color: var(--slate3);
+    color: var(--text-color);
     margin-bottom: 1.75rem;
     font-size: 1rem;
     line-height: 1.625;
@@ -318,7 +317,7 @@
   }
 
   figcaption {
-    color: var(--slate8);
+    color: var(--secondary-color);
     margin-top: -1rem;
     text-align: center;
     font-size: 0.875rem;
