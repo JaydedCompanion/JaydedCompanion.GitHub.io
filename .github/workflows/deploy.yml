@@ -31,7 +31,7 @@ jobs:
       - name: Setup Zola
         uses: taiki-e/install-action@v2
         with:
-          tool: zola@0.18.0
+          tool: zola@0.20.0
 
       - name: Check Zola version
         run: zola --version
