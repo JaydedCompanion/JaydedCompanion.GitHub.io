@@ -20,7 +20,7 @@
 }
 
 .footer-link:hover {
-  color: color-mix(in okhcl, var(--secondary-color), white 10%);
+  color: color-mix(in oklch, var(--secondary-color), white 75%);
 }
 
 .footer-copyright {

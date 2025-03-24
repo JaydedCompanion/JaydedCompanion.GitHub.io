@@ -9,7 +9,7 @@
     <div class="fullwidth-flex index-header">
       <div class="content-container">
         <a href="/" class="navigation-button" aria-label="Back"
-          >{{ load_data(path="static/img/icons/arrow-left.svg") | safe}}</a
+          >{{ load_data(path="static/img/icons/arrow-left.svg") | safe}} Back</a
         >
         <div class="spacer"></div>
       </div>
@@ -30,16 +30,16 @@
         <ul>
           {% for h2 in page.toc %}
           <li>
-            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+          <span><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></span>
             {% if h2.children %}
             <ul>
               {% for h3 in h2.children %}
               <li style="margin-left: 16px">
-                <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                <span><a href="{{ h3.permalink | safe }}">{{ h3.title }}</a></span>
                 <ul>
                   {% for h4 in h3.children %}
                   <li style="margin-left: 26px">
-                    <a href="{{ h4.permalink | safe }}">{{ h4.title }}</a>
+                    <span><a href="{{ h4.permalink | safe }}">{{ h4.title }}</a></span>
                   </li>
                   {% endfor %}
                 </ul>

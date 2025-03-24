@@ -43,12 +43,8 @@ body {
 }
 
 .navigation-button {
-  min-width: 4rem;
   width: fit-content;
-  background-color: color-mix(in oklch, var(--background-color), white 10%);
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  color: var(--text-color);
+  color: var(--secondary-color);
   transition: all 0.2s cubic-bezier(0.3,0,.3,1);
   -webkit-user-select: none;
   user-select: none;
@@ -64,7 +60,7 @@ body {
 }
 
 .navigation-button:hover {
-  background-color: color-mix(in oklch, #212225, white 10%)
+  color: color-mix(in oklch, var(--secondary-color), white 75%)
 }
 
 /* Global styles */
