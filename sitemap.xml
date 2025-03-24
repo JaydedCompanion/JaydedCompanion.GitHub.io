@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://callejas.xyz/</loc>
+    </url>
+    <url>
+        <loc>https://callejas.xyz/blog/</loc>
+    </url>
+    <url>
+        <loc>https://callejas.xyz/blog/playdate-devlog-001/</loc>
+        <lastmod>2025-02-23</lastmod>
+    </url>
+    <url>
+        <loc>https://callejas.xyz/blog/playdate-devlog-002/</loc>
+        <lastmod>2025-03-23</lastmod>
+    </url>
+    <url>
+        <loc>https://callejas.xyz/tags/</loc>
+    </url>
+    <url>
+        <loc>https://callejas.xyz/tags/gamedev/</loc>
+    </url>
+    <url>
+        <loc>https://callejas.xyz/tags/playdate/</loc>
+    </url>
+</urlset>
