@@ -6,6 +6,7 @@ taxonomies:
     - gamedev
     - playdate
 date: 2025-03-23
+author: Jayde Iris Callejas
 ---
 
 ## Gee Playdate!
