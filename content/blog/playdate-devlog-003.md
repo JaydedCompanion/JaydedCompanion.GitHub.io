@@ -1,5 +1,5 @@
 ---
-title: Playdate Devlog 003 - It Still Hasn't Gotten Easier...
+title: Playdate Devlog 003 — It Still Hasn't Gotten Easier...
 description: Going from programming with OOP languages for years to making a game using C is... not trivial. Learning how to structure a program when I no longer have access to commodities such as classes or accessibility levels (in the way I'm used to) has proved to be a much bigger challenge than I initially expected. In the end, I
 taxonomies:
   tags:
