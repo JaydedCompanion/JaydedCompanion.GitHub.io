@@ -11,7 +11,7 @@ author: Jayde Iris Callejas
 
 ## Previously on Jayde's Playdate Devlog...
 
-"Given the kinks I worked out since the last devlog, I'm hoping the next update will contain some real concrete progress!" they said, foolishly. Well, as per usual, my hubris knows no bounds. It has been well over a month(!?) since the last devlog, and the repo for this project has received... one (1) new commit. If you're sitting there thinking "damn well I bet that commit's gotta have at LEAST a thousand lines changed" you should consider halving that number, and then again... and then one more time, until you're well within the low hundreds.
+"Given the kinks I worked out since the last devlog, I'm hoping the next update will contain some real concrete progress!" they said, foolishly. Well, as per usual, my hubris knows no bounds. It has been exactly one month(!?) since the last devlog, and the repo for this project has received... one (1) new commit. If you're sitting there thinking "damn well I bet that commit's gotta have at LEAST a thousand lines changed" you should consider halving that number, and then again... and then one more time, until you're well within the low hundreds.
 
 ## So what went wrong?
 
