@@ -243,18 +243,19 @@
   }
 
   table {
-    border-color: var(--slate4);
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     width: 100%;
-    border-collapse: collapse;
+    border-collapse:collapse;
     overflow: hidden;
     border-radius: 0.75rem;
-    border-width: 1px;
+    border-width: 2px;
+    border-color: var(--playdate-yellow);
 
     thead {
-      border-color: var(--slate4);
-      background-color: var(--slate3);
+      color: var(--background-color);
+      border-color: var(--background-color);
+      background-color: var(--playdate-yellow);
       border-bottom-width: 1px;
       text-align: left;
     }
